@@ -21,7 +21,7 @@ const socials = [
   },
   {
     label: "Phone",
-    href: "tel:+91XXXXXXXXXX",
+    href: "tel:+919840948132",
     icon: Phone,
     color: "hover:text-emerald-400 hover:bg-emerald-400/10",
   },
