@@ -2,7 +2,7 @@ import { profile } from "@/constants/portfolio";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { GlassCard } from "@/components/ui/GlassCard";
-import { Github, Linkedin, Mail, Phone, Check, Copy } from "lucide-react";
+import { Github, Linkedin, Mail, Check, Copy } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
@@ -18,12 +18,6 @@ const socials = [
     href: "https://linkedin.com",
     icon: Linkedin,
     color: "hover:text-[#0A66C2] hover:bg-[#0A66C2]/10",
-  },
-  {
-    label: "Phone",
-    href: "tel:+919840948132",
-    icon: Phone,
-    color: "hover:text-emerald-400 hover:bg-emerald-400/10",
   },
   {
     label: "Email",
