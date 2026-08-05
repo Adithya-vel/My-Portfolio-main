@@ -3,14 +3,14 @@ export const profile = {
   role: "CSE Undergraduate & Aspiring Full Stack Developer",
   tagline: "Turning ideas into real products — one project at a time.",
   location: "Chengalpattu, Tamil Nadu, India",
-  email: "adithya@example.com",
+  email: "adithyamuralikrishnan512@gmail.com",
   summary:
     "A passionate Computer Science undergraduate with a keen interest in full stack web development, AI/ML, and open-source. Currently in my second year, I'm actively building projects, participating in hackathons, and sharpening my skills every day.",
   socials: [
     { label: "GitHub", href: "https://github.com", icon: "github" },
     { label: "LinkedIn", href: "https://linkedin.com", icon: "linkedin" },
     { label: "X", href: "https://x.com", icon: "twitter" },
-    { label: "Email", href: "mailto:adithya@example.com", icon: "mail" },
+    { label: "Email", href: "mailto:adithyamuralikrishnan512@gmail.com", icon: "mail" },
   ],
 };
 
