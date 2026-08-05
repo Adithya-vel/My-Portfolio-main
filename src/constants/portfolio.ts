@@ -60,46 +60,38 @@ export const experience = [
 
 export const projects = [
   {
-    title: "Portfolio Website",
+    title: "HomeSure Management",
     featured: true,
     summary:
-      "This portfolio — built from scratch with React, Vite, Tailwind CSS, and Framer Motion. Features theme switching, smooth animations, glassmorphism cards, and a fully responsive layout.",
-    tech: ["React", "Vite", "Tailwind CSS", "TypeScript", "Framer Motion"],
-    github: "https://github.com",
-    demo: "https://example.com",
+      "A modern property and home warranty management platform featuring multi-role authentication, tenant & contractor management, service requests, and an analytics dashboard.",
+    tech: ["React", "TypeScript", "Vite", "Tailwind CSS", "TanStack Router"],
+    github: "",
+    demo: "",
     accent: "from-[color-mix(in_oklab,var(--brand-blue)_60%,transparent)]",
   },
   {
-    title: "AI Chat Interface",
+    title: "SPAREV",
     summary:
-      "A clean, minimal chat interface that connects to an AI API. Built to explore LLM integration, streaming responses, and building conversational UIs with React.",
-    tech: ["React", "Node.js", "OpenAI API", "Tailwind CSS"],
-    github: "https://github.com",
-    demo: "https://example.com",
+      "A comprehensive software solution focused on performance and reliability. Built to manage complex operations with a modern tech stack.",
+    tech: ["TypeScript", "React", "Node.js"],
+    github: "https://github.com/Adithya-vel/SPAREV",
+    demo: "",
   },
   {
-    title: "Task Manager App",
+    title: "Finance Track",
     summary:
-      "A full stack task management application with user authentication, drag-and-drop task boards, and real-time updates using Firebase.",
-    tech: ["React", "Firebase", "Tailwind CSS", "DnD Kit"],
-    github: "https://github.com",
-    demo: "https://example.com",
+      "A personal finance tracking application that helps users monitor expenses, manage budgets, and visualize their financial data over time.",
+    tech: ["React", "JavaScript", "Tailwind CSS"],
+    github: "https://github.com/Adithya-vel/finance-track",
+    demo: "",
   },
   {
-    title: "Java Spring Boot REST API",
+    title: "ZT IoT Guard",
     summary:
-      "A RESTful API project built as part of learning Java full stack development. Implements CRUD operations, JWT authentication, and MySQL persistence.",
-    tech: ["Java", "Spring Boot", "MySQL", "JWT"],
-    github: "https://github.com",
-    demo: "https://example.com",
-  },
-  {
-    title: "ML Sentiment Analyser",
-    summary:
-      "A machine learning project that classifies the sentiment of user reviews as positive or negative using a trained Naive Bayes model and a simple Flask web UI.",
-    tech: ["Python", "scikit-learn", "Flask", "NLTK"],
-    github: "https://github.com",
-    demo: "https://example.com",
+      "A Zero Trust security solution for Internet of Things (IoT) devices. Implements robust authentication and monitoring to secure IoT networks.",
+    tech: ["TypeScript", "IoT", "Security"],
+    github: "https://github.com/Adithya-vel/ZT-Iot-Guard",
+    demo: "",
   },
 ];
 
