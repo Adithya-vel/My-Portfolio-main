@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 
-export type Theme = 'default' | 'aurora' | 'ember' | 'daylight';
+export type Theme = 'default' | 'aurora' | 'ember' | 'daylight' | 'sunrise' | 'frost';
 
 const STORAGE_KEY = 'portfolio-theme';
 
@@ -21,7 +21,7 @@ export function useTheme() {
   }, [theme]);
 
   const cycleTheme = useCallback(() => {
-    const themes: Theme[] = ['default', 'aurora', 'ember', 'daylight'];
+    const themes: Theme[] = ['default', 'aurora', 'ember', 'daylight', 'sunrise', 'frost'];
     setTheme(prev => {
       const idx = themes.indexOf(prev);
       return themes[(idx + 1) % themes.length];

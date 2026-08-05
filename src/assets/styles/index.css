@@ -156,6 +156,78 @@ html[data-theme="daylight"] ::-webkit-scrollbar-thumb {
   background: oklch(0.2 0.02 265 / 18%);
 }
 
+html[data-theme="sunrise"] {
+  --background: oklch(0.985 0.02 65);
+  --foreground: oklch(0.2 0.02 50);
+  --card: oklch(1 0.01 65);
+  --card-foreground: oklch(0.2 0.02 50);
+  --popover: oklch(1 0.01 65);
+  --popover-foreground: oklch(0.2 0.02 50);
+  --primary: oklch(0.65 0.18 35);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.95 0.015 65);
+  --secondary-foreground: oklch(0.25 0.02 50);
+  --muted: oklch(0.94 0.012 65);
+  --muted-foreground: oklch(0.5 0.02 50);
+  --accent: oklch(0.92 0.025 65);
+  --accent-foreground: oklch(0.2 0.02 50);
+  --border: oklch(0.2 0.02 50 / 12%);
+  --input: oklch(0.2 0.02 50 / 16%);
+  --ring: oklch(0.65 0.18 35);
+  --brand-blue: oklch(0.65 0.18 35);
+  --brand-indigo: oklch(0.6 0.18 10);
+  --brand-purple: oklch(0.65 0.18 340);
+  --glass: oklch(0.2 0.02 50 / 3%);
+  --glass-border: oklch(0.2 0.02 50 / 10%);
+  --gradient-soft: linear-gradient(160deg, oklch(1 0 0 / 85%), oklch(1 0 0 / 55%));
+  --shadow-soft: 0 1px 1px oklch(0.2 0.02 50 / 6%), 0 24px 60px -28px oklch(0.2 0.02 50 / 22%);
+  --shadow-glow: 0 0 0 1px oklch(0.2 0.02 50 / 8%), 0 20px 60px -20px oklch(0.65 0.18 35 / 35%);
+}
+
+html[data-theme="sunrise"] ::selection {
+  background: oklch(0.65 0.18 35 / 25%);
+}
+
+html[data-theme="sunrise"] ::-webkit-scrollbar-thumb {
+  background: oklch(0.2 0.02 50 / 18%);
+}
+
+html[data-theme="frost"] {
+  --background: oklch(0.985 0.01 220);
+  --foreground: oklch(0.2 0.02 220);
+  --card: oklch(1 0.005 220);
+  --card-foreground: oklch(0.2 0.02 220);
+  --popover: oklch(1 0.005 220);
+  --popover-foreground: oklch(0.2 0.02 220);
+  --primary: oklch(0.6 0.14 220);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.95 0.01 220);
+  --secondary-foreground: oklch(0.25 0.02 220);
+  --muted: oklch(0.94 0.008 220);
+  --muted-foreground: oklch(0.5 0.015 220);
+  --accent: oklch(0.92 0.015 220);
+  --accent-foreground: oklch(0.2 0.02 220);
+  --border: oklch(0.2 0.02 220 / 12%);
+  --input: oklch(0.2 0.02 220 / 16%);
+  --ring: oklch(0.6 0.14 220);
+  --brand-blue: oklch(0.6 0.14 220);
+  --brand-indigo: oklch(0.65 0.12 250);
+  --brand-purple: oklch(0.6 0.14 280);
+  --glass: oklch(0.2 0.02 220 / 3%);
+  --glass-border: oklch(0.2 0.02 220 / 10%);
+  --gradient-soft: linear-gradient(160deg, oklch(1 0 0 / 85%), oklch(1 0 0 / 55%));
+  --shadow-soft: 0 1px 1px oklch(0.2 0.02 220 / 6%), 0 24px 60px -28px oklch(0.2 0.02 220 / 22%);
+  --shadow-glow: 0 0 0 1px oklch(0.2 0.02 220 / 8%), 0 20px 60px -20px oklch(0.6 0.14 220 / 35%);
+}
+
+html[data-theme="frost"] ::selection {
+  background: oklch(0.6 0.14 220 / 25%);
+}
+
+html[data-theme="frost"] ::-webkit-scrollbar-thumb {
+  background: oklch(0.2 0.02 220 / 18%);
+}
+
 
 @layer base {
   * {

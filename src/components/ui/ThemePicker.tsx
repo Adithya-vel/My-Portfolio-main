@@ -8,7 +8,9 @@ const themes: { id: Theme; label: string; color: string }[] = [
   { id: 'default', label: 'Indigo',  color: 'bg-[oklch(0.62_0.19_268)]' },
   { id: 'aurora',  label: 'Aurora',  color: 'bg-[oklch(0.72_0.14_195)]' },
   { id: 'ember',   label: 'Ember',   color: 'bg-[oklch(0.70_0.17_45)]'  },
-  { id: 'daylight',label: 'Light',   color: 'bg-[oklch(0.55_0.2_265)]'  },
+  { id: 'daylight',label: 'Daylight',color: 'bg-[oklch(0.55_0.2_265)]'  },
+  { id: 'sunrise', label: 'Sunrise', color: 'bg-[oklch(0.65_0.18_35)]'  },
+  { id: 'frost',   label: 'Frost',   color: 'bg-[oklch(0.6_0.14_220)]'   },
 ];
 
 export function ThemePicker() {
