@@ -39,7 +39,7 @@ export function Navbar() {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6">
         <a href="#home" className="transition-transform hover:scale-105 active:scale-95 flex items-center justify-center">
           <img 
-            src="/logo.png" 
+            src="/logo.portfolio.png" 
             alt="AV Logo" 
             className="w-10 h-10 object-contain rounded-xl shadow-sm"
             onError={(e) => {
