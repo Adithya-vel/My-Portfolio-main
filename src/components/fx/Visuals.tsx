@@ -33,10 +33,16 @@ export function CursorGlow() {
   if (!visible) return null;
 
   return (
-    <div
-      className="pointer-events-none fixed inset-0 z-[100] transition-opacity duration-300"
-      style={{
-        background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, rgba(255,255,255,0.06), transparent 40%)`,
+    <motion.div
+      className="pointer-events-none fixed top-0 left-0 z-[50] h-[500px] w-[500px] rounded-full bg-brand-blue/20 blur-[120px] mix-blend-screen"
+      animate={{
+        x: position.x - 250,
+        y: position.y - 250,
+      }}
+      transition={{
+        type: "tween",
+        ease: "linear",
+        duration: 0.1,
       }}
     />
   );

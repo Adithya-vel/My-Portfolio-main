@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 
 export function Hero() {
   return (
-    <section id="home" className="relative flex min-h-[90vh] items-center px-6 pt-24 pb-12 sm:pt-32">
-      <div className="mx-auto max-w-6xl w-full">
+    <section id="home" className="relative flex min-h-[90vh] items-center px-6 pt-24 pb-12 sm:pt-32 overflow-hidden">
+      <div className="mx-auto max-w-6xl w-full relative z-10">
         <div className="flex flex-col items-start gap-8">
           <Reveal delay={100}>
             <div className="inline-flex items-center rounded-full border border-brand-blue/30 bg-brand-blue/10 px-4 py-1.5 text-sm font-medium text-brand-blue backdrop-blur-md shadow-[0_0_20px_-5px_var(--color-brand-blue)]">
