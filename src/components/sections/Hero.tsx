@@ -22,7 +22,7 @@ export function Hero() {
               <h1 className="font-display text-5xl font-bold tracking-tight text-foreground sm:text-7xl lg:text-8xl">
                 Hi, I'm {profile.name}.
                 <br />
-                <span className="text-gradient inline-block">
+                <span className="text-gradient inline-block text-4xl sm:text-5xl lg:text-7xl mt-2">
                   I craft digital experiences.
                 </span>
               </h1>
