@@ -33,11 +33,11 @@ export const skills = [
 export const experience = [
   {
     period: "2024 — Present",
-    role: "Developer",
-    company: "Home Sure Management",
+    role: "Full Stack Developer",
+    company: "HomeSure Management (Ongoing)",
     detail:
-      "Currently working on an ongoing project for Home Sure Management. Designing and building out the application architecture, and continuously iterating on features.",
-    tags: ["React", "Node.js", "Ongoing Project"],
+      "Building a modern property and home warranty management platform for a client under our FA. The system features multi-role authentication, tenant & contractor management, service requests, warranty tracking, and an analytics dashboard.",
+    tags: ["React", "TypeScript", "Vite", "TanStack Router", "Tailwind CSS"],
   },
   {
     period: "2024",
