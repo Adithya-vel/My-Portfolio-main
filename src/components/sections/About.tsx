@@ -4,6 +4,7 @@ import { GlassCard } from "@/components/ui/GlassCard";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { useReveal } from "@/hooks/useScroll";
+import profilePhoto from "@/assets/images/profile.jpg";
 
 const iconMap = { layout: Layout, server: Server, cloud: Cloud, database: Database, gauge: Gauge, shield: Shield } as const;
 
@@ -15,37 +16,63 @@ export function About() {
         {/* Two-column layout */}
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-20 lg:items-start">
 
-          {/* Left — Heading */}
+          {/* Left — Photo + Heading */}
           <Reveal delay={60}>
-            <div className="space-y-4">
-              <span className="text-sm font-semibold tracking-widest text-brand-blue uppercase">
-                About
-              </span>
-              <h2 className="font-display text-5xl font-bold tracking-tight text-foreground sm:text-6xl leading-tight">
-                About<br />
-                <span className="text-gradient">Me.</span>
-              </h2>
-              <p className="mt-4 text-base text-muted-foreground">
-                Here's a little about who I am and what I'm working towards.
-              </p>
+            <div className="flex flex-col items-center lg:items-start gap-8">
 
-              {/* Stats strip */}
-              <dl className="mt-10 grid grid-cols-2 gap-6">
-                {stats.map((s) => (
-                  <div key={s.label} className="flex flex-col">
-                    <dt className="font-display text-gradient text-3xl font-semibold">
-                      {s.value}
-                    </dt>
-                    <dd className="mt-1 text-xs tracking-wide text-muted-foreground">
-                      {s.label}
-                    </dd>
-                  </div>
-                ))}
-              </dl>
+              {/* ── Profile Photo ── */}
+              <div className="relative flex-shrink-0">
+                {/* Spinning gradient ring */}
+                <div className="absolute -inset-1 rounded-full bg-gradient-brand opacity-80 blur-sm animate-spin-slow" />
+                {/* Static solid ring */}
+                <div className="absolute -inset-[3px] rounded-full bg-gradient-brand opacity-60" />
+
+                {/* Photo circle */}
+                <div className="relative h-40 w-40 rounded-full overflow-hidden ring-4 ring-background shadow-2xl">
+                  <img
+                    src={profilePhoto}
+                    alt="Adithya Vel M"
+                    className="h-full w-full object-cover object-top"
+                  />
+                </div>
+
+                {/* Online badge */}
+                <span className="absolute bottom-2 right-2 flex h-5 w-5 items-center justify-center rounded-full bg-background ring-2 ring-background">
+                  <span className="h-3 w-3 rounded-full bg-emerald-400 shadow-[0_0_8px_2px_theme(colors.emerald.400/50%)]" />
+                </span>
+              </div>
+
+              {/* Heading */}
+              <div className="space-y-4 text-center lg:text-left">
+                <span className="text-sm font-semibold tracking-widest text-brand-blue uppercase">
+                  About
+                </span>
+                <h2 className="font-display text-5xl font-bold tracking-tight text-foreground sm:text-6xl leading-tight">
+                  About<br />
+                  <span className="text-gradient">Me.</span>
+                </h2>
+                <p className="mt-4 text-base text-muted-foreground">
+                  Here's a little about who I am and what I'm working towards.
+                </p>
+
+                {/* Stats strip */}
+                <dl className="mt-10 grid grid-cols-2 gap-6">
+                  {stats.map((s) => (
+                    <div key={s.label} className="flex flex-col">
+                      <dt className="font-display text-gradient text-3xl font-semibold">
+                        {s.value}
+                      </dt>
+                      <dd className="mt-1 text-xs tracking-wide text-muted-foreground">
+                        {s.label}
+                      </dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
             </div>
           </Reveal>
 
-          {/* Right — About Me paragraph */}
+          {/* Right — About Me card */}
           <Reveal delay={160}>
             <GlassCard className="h-full p-8 sm:p-10" tilt>
               <div className="space-y-4 text-base leading-relaxed text-muted-foreground">
@@ -53,10 +80,10 @@ export function About() {
                   Hi there! I am Adithya Vel.M, an aspiring computer science student who loves to study Data related stuffs, building my skills step by step through entry-level courses and projects.
                 </p>
                 <p>
-                  Along the way, I’ve explored related areas like cloud computing, cybersecurity, and digital marketing, which have given me a broad introduction to the tech field.
+                  Along the way, I've explored related areas like cloud computing, cybersecurity, and digital marketing, which have given me a broad introduction to the tech field.
                 </p>
                 <p>
-                  I’m eager to keep learning, improve my problem-solving abilities, and gain practical experience.
+                  I'm eager to keep learning, improve my problem-solving abilities, and gain practical experience.
                 </p>
                 <p>
                   Open to networking and new opportunities !!!
