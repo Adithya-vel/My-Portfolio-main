@@ -1,5 +1,5 @@
 export const profile = {
-  name: "Aarav Mehta",
+  name: "Adithya Vel M",
   role: "Senior Software Engineer",
   tagline: "Building fast, resilient products for the web.",
   location: "Bengaluru, India",

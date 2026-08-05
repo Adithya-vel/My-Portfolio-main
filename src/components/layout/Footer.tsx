@@ -9,8 +9,8 @@ export function Footer() {
       <div className="mx-auto max-w-6xl">
         <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
           <div className="flex items-center gap-2">
-            <span className="text-lg font-bold text-foreground">AM</span>
-            <span className="text-muted-foreground">&copy; {new Date().getFullYear()} Aarav Mehta.</span>
+            <span className="text-lg font-bold text-foreground">AV</span>
+            <span className="text-muted-foreground">&copy; {new Date().getFullYear()} Adithya Vel M.</span>
           </div>
           <div className="flex gap-4">
             {profile.socials.map((social) => {

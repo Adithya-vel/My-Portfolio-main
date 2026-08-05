@@ -1,10 +1,10 @@
-# Aarav Mehta - Senior Software Engineer Portfolio
+# Adithya Vel M - Senior Software Engineer Portfolio
 
 A premium, modern developer portfolio built to showcase experience, projects, and skills with clean architecture and highly polished UI.
 
 ## Project Overview
 
-This portfolio is a single-page React application designed for high performance and visual excellence. It features glassmorphism design elements, smooth framer-motion animations, custom gradient typography, and an interactive layout that feels both professional and handcrafted. 
+This portfolio is a single-page React application designed for high performance and visual excellence. It features glassmorphism design elements, smooth framer-motion animations, custom gradient typography, and an interactive layout that feels both professional and handcrafted.
 
 ## Features
 
@@ -78,6 +78,6 @@ MIT License. See the [LICENSE](LICENSE) file for details.
 
 ## Author
 
-**Aarav Mehta**
-- GitHub: [@aaravmehta](https://github.com)
-- LinkedIn: [Aarav Mehta](https://linkedin.com)
+
+- GitHub: https://github.com)
+- LinkedIn: [Adithya Vel M](https://linkedin.com)

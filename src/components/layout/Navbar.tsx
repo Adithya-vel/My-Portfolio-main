@@ -37,7 +37,7 @@ export function Navbar() {
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6">
         <a href="#home" className="text-xl font-bold tracking-tight text-foreground transition-colors hover:text-brand-blue">
-          AM<span className="text-brand-blue">.</span>
+          AV<span className="text-brand-blue">.</span>
         </a>
         <nav className="hidden md:block">
           <ul className="flex items-center gap-8">
