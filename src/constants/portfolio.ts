@@ -33,19 +33,19 @@ export const skills = [
 export const experience = [
   {
     period: "2024 — Present",
-    role: "Open Source Contributor",
-    company: "GitHub Community",
+    role: "Developer",
+    company: "Home Sure Management",
     detail:
-      "Actively contributing to open-source repositories, raising issues, submitting pull requests, and collaborating with developers worldwide to improve software quality.",
-    tags: ["Git", "GitHub", "JavaScript", "React"],
+      "Currently working on an ongoing project for Home Sure Management. Designing and building out the application architecture, and continuously iterating on features.",
+    tags: ["React", "Node.js", "Ongoing Project"],
   },
   {
     period: "2024",
-    role: "Hackathon Participant",
-    company: "College & National Level Hackathons",
+    role: "Winner",
+    company: "ULTRON 9.0 Hackathon",
     detail:
-      "Participated in multiple hackathons, building full stack web applications under time pressure. Gained experience in rapid prototyping, team collaboration, and presenting technical solutions.",
-    tags: ["React", "Node.js", "Firebase", "Figma"],
+      "Participated and won the ULTRON 9.0 hackathon with our team. We built and showcased 'TIDY WINDOW', an innovative application developed under strict time pressure.",
+    tags: ["Hackathon", "Rapid Prototyping", "Team Collaboration"],
   },
   {
     period: "2023 — Present",
