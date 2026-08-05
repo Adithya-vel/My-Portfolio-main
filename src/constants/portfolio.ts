@@ -32,7 +32,7 @@ export const skills = [
 
 export const experience = [
   {
-    period: "2024 — Present",
+    period: "2026 — Present",
     role: "Full Stack Developer",
     company: "HomeSure Management (Ongoing)",
     detail:
@@ -40,7 +40,7 @@ export const experience = [
     tags: ["React", "TypeScript", "Vite", "TanStack Router", "Tailwind CSS"],
   },
   {
-    period: "2024",
+    period: "2026",
     role: "Winner",
     company: "ULTRON 9.0 Hackathon",
     detail:
@@ -48,7 +48,7 @@ export const experience = [
     tags: ["Hackathon", "Rapid Prototyping", "Team Collaboration"],
   },
   {
-    period: "2023 — Present",
+    period: "2024 — Present",
     role: "B.E. Computer Science & Engineering",
     company: "University",
     detail:
