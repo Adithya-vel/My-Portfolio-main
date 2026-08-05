@@ -2,8 +2,9 @@ import { profile } from "@/constants/portfolio";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { GlassCard } from "@/components/ui/GlassCard";
-import { Github, Linkedin, Mail, Twitter } from "lucide-react";
+import { Github, Linkedin, Mail, Phone, Check, Copy } from "lucide-react";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 const socials = [
   {
@@ -19,10 +20,10 @@ const socials = [
     color: "hover:text-[#0A66C2] hover:bg-[#0A66C2]/10",
   },
   {
-    label: "X / Twitter",
-    href: "https://x.com",
-    icon: Twitter,
-    color: "hover:text-foreground hover:bg-foreground/10",
+    label: "Phone",
+    href: "tel:+91XXXXXXXXXX",
+    icon: Phone,
+    color: "hover:text-emerald-400 hover:bg-emerald-400/10",
   },
   {
     label: "Email",
@@ -33,6 +34,14 @@ const socials = [
 ];
 
 export function Contact() {
+  const [copied, setCopied] = useState(false);
+
+  function handleCopy() {
+    navigator.clipboard.writeText(profile.email);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  }
+
   return (
     <section id="contact" className="relative px-6 py-28 sm:py-36">
       <div className="mx-auto max-w-6xl">
@@ -43,7 +52,7 @@ export function Contact() {
         />
         <div className="mt-14 grid gap-8 md:grid-cols-2">
 
-          {/* Email Card */}
+          {/* Email Card — static display + copy */}
           <Reveal delay={100}>
             <GlassCard className="flex h-full flex-col justify-center p-10 text-center sm:p-14" tilt>
               <Mail className="mx-auto h-12 w-12 text-brand-blue" />
@@ -51,14 +60,28 @@ export function Contact() {
               <p className="mt-4 text-lg text-muted-foreground">
                 My inbox is always open.
               </p>
-              <motion.a
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                href={`mailto:${profile.email}`}
-                className="mt-8 mx-auto inline-flex items-center justify-center rounded-full bg-brand-blue px-8 py-3.5 text-sm font-semibold text-white shadow-[0_0_30px_-5px_var(--color-brand-blue)] transition-shadow hover:shadow-[0_0_40px_-5px_var(--color-brand-blue)]"
-              >
-                {profile.email}
-              </motion.a>
+
+              {/* Static email display + copy button */}
+              <div className="mt-8 mx-auto flex items-center gap-2 rounded-full border border-border bg-muted/50 px-5 py-3 backdrop-blur-sm">
+                <span className="font-mono text-sm text-foreground select-all">
+                  {profile.email}
+                </span>
+                <motion.button
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  onClick={handleCopy}
+                  aria-label="Copy email"
+                  className="ml-1 flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-brand-blue/15 text-brand-blue transition-colors hover:bg-brand-blue/25"
+                >
+                  {copied
+                    ? <Check className="h-3.5 w-3.5" />
+                    : <Copy className="h-3.5 w-3.5" />
+                  }
+                </motion.button>
+              </div>
+              {copied && (
+                <p className="mt-3 font-mono text-xs text-emerald-400">Copied to clipboard!</p>
+              )}
             </GlassCard>
           </Reveal>
 
@@ -74,7 +97,7 @@ export function Contact() {
                   <motion.a
                     key={s.label}
                     href={s.href}
-                    target={s.label !== "Email" ? "_blank" : undefined}
+                    target={s.label === "GitHub" || s.label === "LinkedIn" ? "_blank" : undefined}
                     rel="noreferrer"
                     aria-label={s.label}
                     whileHover={{ scale: 1.15, y: -4 }}

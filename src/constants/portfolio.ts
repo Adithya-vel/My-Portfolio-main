@@ -4,6 +4,7 @@ export const profile = {
   tagline: "Turning ideas into real products — one project at a time.",
   location: "Chengalpattu, Tamil Nadu, India",
   email: "adithyamuralikrishnan512@gmail.com",
+  phone: "+91 XXXXX XXXXX",
   summary:
     "A passionate Computer Science undergraduate with a keen interest in full stack web development, AI/ML, and open-source. Currently in my second year, I'm actively building projects, participating in hackathons, and sharpening my skills every day.",
   socials: [
