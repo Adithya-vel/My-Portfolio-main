@@ -48,17 +48,20 @@ export function About() {
           {/* Right — About Me paragraph */}
           <Reveal delay={160}>
             <GlassCard className="h-full p-8 sm:p-10" tilt>
-              <p className="text-base leading-relaxed text-muted-foreground">
-                {/* ──────────────────────────────────────────────────────────
-                    PLACEHOLDER — paste your own About Me paragraph here.
-                    Delete this comment block when you add your text.
-                    ────────────────────────────────────────────────────────── */}
-                <span className="text-muted-foreground/40 italic select-none">
-                  [ Your About Me paragraph goes here. Tell visitors who you are,
-                  what you're passionate about, what drives you as a student and
-                  developer, and what you're looking to achieve. ]
-                </span>
-              </p>
+              <div className="space-y-4 text-base leading-relaxed text-muted-foreground">
+                <p>
+                  Hi there! I am Adithya Vel.M, an aspiring computer science student who loves to study Data related stuffs, building my skills step by step through entry-level courses and projects.
+                </p>
+                <p>
+                  Along the way, I’ve explored related areas like cloud computing, cybersecurity, and digital marketing, which have given me a broad introduction to the tech field.
+                </p>
+                <p>
+                  I’m eager to keep learning, improve my problem-solving abilities, and gain practical experience.
+                </p>
+                <p>
+                  Open to networking and new opportunities !!!
+                </p>
+              </div>
 
               <div className="mt-8 flex flex-wrap gap-2 border-t border-border/40 pt-6">
                 {[
