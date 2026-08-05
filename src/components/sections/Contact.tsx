@@ -1,6 +1,6 @@
 import { profile } from "@/constants/portfolio";
 import { Reveal } from "@/components/ui/Reveal";
-import { SectionHeading } from "@/components/ui/SectionDivider";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { Mail, MapPin } from "lucide-react";
 import { motion } from "framer-motion";

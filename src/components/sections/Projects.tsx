@@ -1,7 +1,7 @@
 import { projects } from "@/constants/portfolio";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { Reveal } from "@/components/ui/Reveal";
-import { SectionHeading } from "@/components/ui/SectionDivider";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ArrowUpRight, Github } from "lucide-react";
 
 export function Projects() {

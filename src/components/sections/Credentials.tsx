@@ -1,7 +1,7 @@
 import { certifications, techStack } from "@/constants/portfolio";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { Reveal } from "@/components/ui/Reveal";
-import { SectionHeading } from "@/components/ui/SectionDivider";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export function Certifications() {
   return (

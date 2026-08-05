@@ -2,7 +2,7 @@ import { Cloud, Database, Gauge, Layout, Server, Shield } from "lucide-react";
 import { profile, skills, stats } from "@/constants/portfolio";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { Reveal } from "@/components/ui/Reveal";
-import { SectionHeading } from "@/components/ui/SectionDivider";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 import { useReveal } from "@/hooks/useScroll";
 
 const iconMap = { layout: Layout, server: Server, cloud: Cloud, database: Database, gauge: Gauge, shield: Shield } as const;

@@ -1,6 +1,6 @@
 import { experience } from "@/constants/portfolio";
 import { Reveal } from "@/components/ui/Reveal";
-import { SectionHeading } from "@/components/ui/SectionDivider";
+import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export function Experience() {
   return (
