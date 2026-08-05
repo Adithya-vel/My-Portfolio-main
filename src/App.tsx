@@ -1,5 +1,5 @@
-import Home from './pages/Home';
-import { useTheme } from './hooks/useTheme';
+import Home from '@/pages/Home';
+import { useTheme } from '@/hooks/useTheme';
 
 function App() {
   useTheme(); // applies persisted theme from localStorage on mount

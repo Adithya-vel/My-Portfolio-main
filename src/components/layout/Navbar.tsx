@@ -37,8 +37,17 @@ export function Navbar() {
       )}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6">
-        <a href="#home" className="text-xl font-bold tracking-tight text-foreground transition-colors hover:text-brand-blue">
-          AV<span className="text-brand-blue">.</span>
+        <a href="#home" className="transition-transform hover:scale-105 active:scale-95 flex items-center justify-center">
+          <img 
+            src="/logo.png" 
+            alt="AV Logo" 
+            className="w-10 h-10 object-contain rounded-xl shadow-sm"
+            onError={(e) => {
+              // Fallback if image isn't saved yet
+              e.currentTarget.style.display = 'none';
+              e.currentTarget.parentElement!.innerHTML = '<div class="flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-blue-950 to-indigo-950 text-white font-bold text-lg tracking-wider shadow-sm">AV</div>';
+            }}
+          />
         </a>
         <nav className="hidden md:block">
           <ul className="flex items-center gap-8">
