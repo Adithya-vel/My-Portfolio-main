@@ -3,7 +3,7 @@ import { Hero } from "@/components/sections/Hero";
 import { About, Skills } from "@/components/sections/About";
 import { Experience } from "@/components/sections/Experience";
 import { Projects } from "@/components/sections/Projects";
-import { Certifications, TechStack } from "@/components/sections/Credentials";
+import { TechStack } from "@/components/sections/Credentials";
 import { Contact } from "@/components/sections/Contact";
 import { Footer } from "@/components/layout/Footer";
 import { BackgroundFX, CursorGlow, PageLoader, ScrollProgress } from "@/components/fx/Visuals";
@@ -27,7 +27,7 @@ export default function Home() {
         <SectionDivider />
         <Projects />
         <SectionDivider />
-        <Certifications />
+
         <TechStack />
         <SectionDivider />
         <Contact />
