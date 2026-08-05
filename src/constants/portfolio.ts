@@ -23,11 +23,11 @@ export const stats = [
 
 export const skills = [
   { name: "Frontend Development", level: 75, icon: "layout", blurb: "React, HTML, CSS, Tailwind CSS" },
-  { name: "Backend & APIs", level: 65, icon: "server", blurb: "Node.js, Express, Java Spring Boot" },
+  { name: "Backend & APIs", level: 25, icon: "server", blurb: "Node.js, Express, Java Spring Boot" },
   { name: "AI & Machine Learning", level: 60, icon: "gauge", blurb: "Python, NumPy, scikit-learn, basics of deep learning" },
-  { name: "Databases", level: 68, icon: "database", blurb: "MySQL, MongoDB, Firebase" },
-  { name: "Cloud & DevOps", level: 50, icon: "cloud", blurb: "Git, GitHub Actions, Vercel, basic Docker" },
-  { name: "Programming Languages", level: 72, icon: "shield", blurb: "Java, Python, JavaScript, C" },
+  { name: "Databases", level: 50, icon: "database", blurb: "MySQL, MongoDB, Firebase" },
+  { name: "Cloud & DevOps", level: 40, icon: "cloud", blurb: "Git, GitHub Actions, Vercel, basic Docker" },
+  { name: "Programming Languages", level: 50, icon: "shield", blurb: "Java, Python, JavaScript, C" },
 ];
 
 export const experience = [
