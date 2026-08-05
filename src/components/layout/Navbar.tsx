@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { navItems } from "@/constants/portfolio";
 import { cn } from "@/utils/cn";
+import { ThemePicker } from "@/components/ui/ThemePicker";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -57,12 +58,15 @@ export function Navbar() {
             ))}
           </ul>
         </nav>
-        <a
-          href="#contact"
-          className="hidden md:inline-flex rounded-full bg-foreground px-5 py-2 text-sm font-semibold text-background transition-transform hover:scale-105 active:scale-95"
-        >
-          Let's Talk
-        </a>
+        <div className="flex items-center gap-3">
+          <ThemePicker />
+          <a
+            href="#contact"
+            className="hidden md:inline-flex rounded-full bg-foreground px-5 py-2 text-sm font-semibold text-background transition-transform hover:scale-105 active:scale-95"
+          >
+            Let's Talk
+          </a>
+        </div>
       </div>
     </header>
   );
