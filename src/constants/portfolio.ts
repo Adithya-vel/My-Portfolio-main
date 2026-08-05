@@ -72,7 +72,7 @@ export const projects = [
   {
     title: "SPAREV",
     summary:
-      "A comprehensive software solution focused on performance and reliability. Built to manage complex operations with a modern tech stack.",
+      "A smart parking management system with an integrated EV charging option, providing users with a seamless and modern parking experience.",
     tech: ["TypeScript", "React", "Node.js"],
     github: "https://github.com/Adithya-vel/SPAREV",
     demo: "",
