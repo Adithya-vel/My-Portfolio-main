@@ -8,8 +8,8 @@ export function Experience() {
       <div className="mx-auto max-w-6xl">
         <SectionHeading
           eyebrow="Experience"
-          title="Where I've been."
-          description="A timeline of companies and teams I've helped grow."
+          title="My journey so far."
+          description="Education, open source contributions, and hackathon experiences that have shaped me."
         />
         <div className="mt-14 max-w-3xl">
           <div className="relative border-l border-border/50 pb-8 pl-8 sm:pl-12">

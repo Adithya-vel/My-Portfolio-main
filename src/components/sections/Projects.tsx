@@ -10,8 +10,8 @@ export function Projects() {
       <div className="mx-auto max-w-6xl">
         <SectionHeading
           eyebrow="Work"
-          title="Selected projects."
-          description="A mix of professional work and personal experiments."
+          title="Things I've built."
+          description="Personal projects and learning experiments — built to solve real problems and grow my skills."
         />
         <div className="mt-14 grid gap-8 md:grid-cols-2">
           {projects.map((project, i) => (

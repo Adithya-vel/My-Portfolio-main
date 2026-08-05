@@ -1,5 +1,5 @@
 import { Cloud, Database, Gauge, Layout, Server, Shield } from "lucide-react";
-import { profile, skills, stats } from "@/constants/portfolio";
+import { skills, stats } from "@/constants/portfolio";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -11,28 +11,28 @@ export function About() {
   return (
     <section id="about" className="relative px-6 py-28 sm:py-36">
       <div className="mx-auto max-w-6xl">
-        <SectionHeading
-          eyebrow="About"
-          title="Engineering with intent, not just output."
-          description={profile.summary}
-        />
 
-        <div className="mt-14 grid gap-6 lg:grid-cols-[1.4fr_1fr]">
-          <Reveal delay={80}>
-            <GlassCard className="h-full p-8 sm:p-10">
-              <p className="text-lg leading-relaxed text-foreground/90">
-                I care about the parts of software people never see — the migration that
-                doesn't page anyone at 3am, the API that reads like prose, the interface that
-                responds before you finish thinking.
+        {/* Two-column layout */}
+        <div className="grid gap-12 lg:grid-cols-2 lg:gap-20 lg:items-start">
+
+          {/* Left — Heading */}
+          <Reveal delay={60}>
+            <div className="space-y-4">
+              <span className="text-sm font-semibold tracking-widest text-brand-blue uppercase">
+                About
+              </span>
+              <h2 className="font-display text-5xl font-bold tracking-tight text-foreground sm:text-6xl leading-tight">
+                About<br />
+                <span className="text-gradient">Me.</span>
+              </h2>
+              <p className="mt-4 text-base text-muted-foreground">
+                Here's a little about who I am and what I'm working towards.
               </p>
-              <p className="mt-5 leading-relaxed text-muted-foreground">
-                Most of my work sits at the seam between product and platform: shaping systems
-                that stay understandable as teams grow. I write a lot of design docs, delete a
-                lot of code, and mentor engineers into owning their surfaces end to end.
-              </p>
-              <dl className="mt-10 grid grid-cols-2 gap-6 sm:grid-cols-4">
+
+              {/* Stats strip */}
+              <dl className="mt-10 grid grid-cols-2 gap-6">
                 {stats.map((s) => (
-                  <div key={s.label}>
+                  <div key={s.label} className="flex flex-col">
                     <dt className="font-display text-gradient text-3xl font-semibold">
                       {s.value}
                     </dt>
@@ -42,27 +42,39 @@ export function About() {
                   </div>
                 ))}
               </dl>
+            </div>
+          </Reveal>
+
+          {/* Right — About Me paragraph */}
+          <Reveal delay={160}>
+            <GlassCard className="h-full p-8 sm:p-10" tilt>
+              <p className="text-base leading-relaxed text-muted-foreground">
+                {/* ──────────────────────────────────────────────────────────
+                    PLACEHOLDER — paste your own About Me paragraph here.
+                    Delete this comment block when you add your text.
+                    ────────────────────────────────────────────────────────── */}
+                <span className="text-muted-foreground/40 italic select-none">
+                  [ Your About Me paragraph goes here. Tell visitors who you are,
+                  what you're passionate about, what drives you as a student and
+                  developer, and what you're looking to achieve. ]
+                </span>
+              </p>
+
+              <div className="mt-8 flex flex-wrap gap-2 border-t border-border/40 pt-6">
+                {[
+                  ["📍 Location", "Chengalpattu, Tamil Nadu, India"],
+                  ["🎓 Degree", "B.E. Computer Science & Engineering"],
+                  ["💼 Open to", "Internships & Collaborations"],
+                ].map(([k, v]) => (
+                  <div key={k} className="w-full flex items-center justify-between gap-4 text-sm">
+                    <span className="text-muted-foreground">{k}</span>
+                    <span className="text-right font-medium text-foreground">{v}</span>
+                  </div>
+                ))}
+              </div>
             </GlassCard>
           </Reveal>
 
-          <Reveal delay={160}>
-            <GlassCard className="h-full p-8 sm:p-10" tilt>
-              <h3 className="font-display text-lg font-semibold">Currently</h3>
-              <ul className="mt-6 space-y-5 text-sm">
-                {[
-                  ["Role", profile.role],
-                  ["Based in", profile.location],
-                  ["Focus", "Distributed systems & DX"],
-                  ["Open to", "Staff roles, advisory, consulting"],
-                ].map(([k, v]) => (
-                  <li key={k} className="flex items-start justify-between gap-6">
-                    <span className="text-muted-foreground">{k}</span>
-                    <span className="text-right font-medium">{v}</span>
-                  </li>
-                ))}
-              </ul>
-            </GlassCard>
-          </Reveal>
         </div>
       </div>
     </section>
@@ -75,8 +87,8 @@ export function Skills() {
       <div className="mx-auto max-w-6xl">
         <SectionHeading
           eyebrow="Skills"
-          title="Depth where it counts."
-          description="A working map of what I reach for, and how confidently."
+          title="What I work with."
+          description="Technologies and tools I'm actively learning and building with."
         />
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {skills.map((skill, i) => (

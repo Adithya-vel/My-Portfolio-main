@@ -11,8 +11,8 @@ export function Contact() {
       <div className="mx-auto max-w-6xl">
         <SectionHeading
           eyebrow="Contact"
-          title="Let's build something."
-          description="Whether it's a new project, a staff role, or just a chat about distributed systems."
+          title="Let's connect."
+          description="I'm always open to exciting projects, internship opportunities, or just a good conversation about tech."
         />
         <div className="mt-14 grid gap-8 md:grid-cols-2">
           <Reveal delay={100}>

@@ -1,143 +1,135 @@
 export const profile = {
   name: "Adithya Vel M",
-  role: "Senior Software Engineer",
-  tagline: "Building fast, resilient products for the web.",
-  location: "Bengaluru, India",
-  email: "hello@aaravmehta.dev",
+  role: "CSE Undergraduate & Aspiring Full Stack Developer",
+  tagline: "Turning ideas into real products — one project at a time.",
+  location: "Chengalpattu, Tamil Nadu, India",
+  email: "adithya@example.com",
   summary:
-    "I design and engineer distributed systems and interfaces that stay quick under pressure. Nine years across fintech, developer tooling and large-scale platforms — most of it spent shipping to millions of users.",
+    "A passionate Computer Science undergraduate with a keen interest in full stack web development, AI/ML, and open-source. Currently in my second year, I'm actively building projects, participating in hackathons, and sharpening my skills every day.",
   socials: [
     { label: "GitHub", href: "https://github.com", icon: "github" },
     { label: "LinkedIn", href: "https://linkedin.com", icon: "linkedin" },
     { label: "X", href: "https://x.com", icon: "twitter" },
-    { label: "Email", href: "mailto:hello@aaravmehta.dev", icon: "mail" },
+    { label: "Email", href: "mailto:adithya@example.com", icon: "mail" },
   ],
 };
 
 export const stats = [
-  { value: "9+", label: "Years shipping" },
-  { value: "40+", label: "Projects delivered" },
-  { value: "12M", label: "Users served" },
-  { value: "99.98%", label: "Uptime maintained" },
+  { value: "2nd", label: "Year of B.E. CSE" },
+  { value: "10+", label: "Projects built" },
+  { value: "3+", label: "Hackathons joined" },
+  { value: "100%", label: "Drive to learn" },
 ];
 
 export const skills = [
-  { name: "Frontend Architecture", level: 95, icon: "layout", blurb: "React, TypeScript, design systems" },
-  { name: "Backend & APIs", level: 90, icon: "server", blurb: "Node, Go, GraphQL, gRPC" },
-  { name: "Cloud & Infra", level: 86, icon: "cloud", blurb: "AWS, Kubernetes, Terraform" },
-  { name: "Databases", level: 88, icon: "database", blurb: "Postgres, Redis, ClickHouse" },
-  { name: "Performance", level: 92, icon: "gauge", blurb: "Profiling, caching, Core Web Vitals" },
-  { name: "Security", level: 80, icon: "shield", blurb: "Threat modelling, OWASP, zero-trust" },
+  { name: "Frontend Development", level: 75, icon: "layout", blurb: "React, HTML, CSS, Tailwind CSS" },
+  { name: "Backend & APIs", level: 65, icon: "server", blurb: "Node.js, Express, Java Spring Boot" },
+  { name: "AI & Machine Learning", level: 60, icon: "gauge", blurb: "Python, NumPy, scikit-learn, basics of deep learning" },
+  { name: "Databases", level: 68, icon: "database", blurb: "MySQL, MongoDB, Firebase" },
+  { name: "Cloud & DevOps", level: 50, icon: "cloud", blurb: "Git, GitHub Actions, Vercel, basic Docker" },
+  { name: "Programming Languages", level: 72, icon: "shield", blurb: "Java, Python, JavaScript, C" },
 ];
 
 export const experience = [
   {
+    period: "2024 — Present",
+    role: "Open Source Contributor",
+    company: "GitHub Community",
+    detail:
+      "Actively contributing to open-source repositories, raising issues, submitting pull requests, and collaborating with developers worldwide to improve software quality.",
+    tags: ["Git", "GitHub", "JavaScript", "React"],
+  },
+  {
+    period: "2024",
+    role: "Hackathon Participant",
+    company: "College & National Level Hackathons",
+    detail:
+      "Participated in multiple hackathons, building full stack web applications under time pressure. Gained experience in rapid prototyping, team collaboration, and presenting technical solutions.",
+    tags: ["React", "Node.js", "Firebase", "Figma"],
+  },
+  {
     period: "2023 — Present",
-    role: "Senior Software Engineer",
-    company: "Northwind Systems",
+    role: "B.E. Computer Science & Engineering",
+    company: "University",
     detail:
-      "Lead engineer for the payments platform. Re-architected the ledger service to event sourcing, cutting reconciliation time from hours to seconds and taking p99 latency below 40ms.",
-    tags: ["Go", "Kafka", "Postgres", "Kubernetes"],
-  },
-  {
-    period: "2020 — 2023",
-    role: "Full-Stack Engineer",
-    company: "Lumen Labs",
-    detail:
-      "Built the design system and app shell used by nine product teams. Shipped a streaming dashboard handling 200k events per minute with sub-second render budgets.",
-    tags: ["React", "TypeScript", "GraphQL", "AWS"],
-  },
-  {
-    period: "2018 — 2020",
-    role: "Product Engineer",
-    company: "Cobalt Studio",
-    detail:
-      "Owned client delivery end to end — from discovery to production. Introduced CI/CD and automated testing that dropped release cycles from two weeks to daily.",
-    tags: ["Node.js", "Next.js", "Docker"],
-  },
-  {
-    period: "2017 — 2018",
-    role: "Software Engineer",
-    company: "Bitmark",
-    detail:
-      "Started on internal tooling, ended up rewriting the reporting pipeline in a way that still runs today. Learned to obsess over the details that users feel.",
-    tags: ["Python", "Airflow", "Redis"],
+      "Pursuing a Bachelor of Engineering in Computer Science. Studying core subjects including Data Structures, Algorithms, DBMS, Operating Systems, and Computer Networks alongside modern development skills.",
+    tags: ["Java", "Python", "C", "Data Structures", "DBMS"],
   },
 ];
 
 export const projects = [
   {
-    title: "Atlas Ledger",
+    title: "Portfolio Website",
     featured: true,
     summary:
-      "A double-entry ledger engine with deterministic replay, built for regulated fintech workloads. Handles 12k transactions per second with full auditability.",
-    tech: ["Go", "Kafka", "Postgres", "gRPC", "Terraform"],
+      "This portfolio — built from scratch with React, Vite, Tailwind CSS, and Framer Motion. Features theme switching, smooth animations, glassmorphism cards, and a fully responsive layout.",
+    tech: ["React", "Vite", "Tailwind CSS", "TypeScript", "Framer Motion"],
     github: "https://github.com",
     demo: "https://example.com",
     accent: "from-[color-mix(in_oklab,var(--brand-blue)_60%,transparent)]",
   },
   {
-    title: "Prism UI",
+    title: "AI Chat Interface",
     summary:
-      "An accessible React component library with token-driven theming, used across nine internal products.",
-    tech: ["React", "TypeScript", "Radix", "Tailwind"],
+      "A clean, minimal chat interface that connects to an AI API. Built to explore LLM integration, streaming responses, and building conversational UIs with React.",
+    tech: ["React", "Node.js", "OpenAI API", "Tailwind CSS"],
     github: "https://github.com",
     demo: "https://example.com",
   },
   {
-    title: "Pulse Analytics",
+    title: "Task Manager App",
     summary:
-      "Realtime event analytics with a columnar backend and a dashboard that renders a million points without dropping frames.",
-    tech: ["ClickHouse", "Node.js", "WebSockets"],
+      "A full stack task management application with user authentication, drag-and-drop task boards, and real-time updates using Firebase.",
+    tech: ["React", "Firebase", "Tailwind CSS", "DnD Kit"],
     github: "https://github.com",
     demo: "https://example.com",
   },
   {
-    title: "Forge CLI",
+    title: "Java Spring Boot REST API",
     summary:
-      "Developer tooling that scaffolds, tests and deploys services in one command. Cut onboarding from days to minutes.",
-    tech: ["Rust", "Docker", "GitHub Actions"],
+      "A RESTful API project built as part of learning Java full stack development. Implements CRUD operations, JWT authentication, and MySQL persistence.",
+    tech: ["Java", "Spring Boot", "MySQL", "JWT"],
     github: "https://github.com",
     demo: "https://example.com",
   },
   {
-    title: "Vault Guard",
+    title: "ML Sentiment Analyser",
     summary:
-      "Zero-trust secret rotation service with hardware-backed keys and full policy-as-code support.",
-    tech: ["Go", "Vault", "OPA", "AWS KMS"],
+      "A machine learning project that classifies the sentiment of user reviews as positive or negative using a trained Naive Bayes model and a simple Flask web UI.",
+    tech: ["Python", "scikit-learn", "Flask", "NLTK"],
     github: "https://github.com",
     demo: "https://example.com",
   },
 ];
 
 export const certifications = [
-  { title: "AWS Solutions Architect — Professional", issuer: "Amazon Web Services", year: "2024" },
-  { title: "Certified Kubernetes Administrator", issuer: "CNCF", year: "2023" },
-  { title: "Google Professional Cloud Architect", issuer: "Google Cloud", year: "2022" },
-  { title: "MongoDB Associate Developer", issuer: "MongoDB", year: "2021" },
+  { title: "Responsive Web Design", issuer: "freeCodeCamp", year: "2024" },
+  { title: "JavaScript Algorithms & Data Structures", issuer: "freeCodeCamp", year: "2024" },
+  { title: "React — The Complete Guide", issuer: "Udemy", year: "2024" },
+  { title: "Python for Data Science & AI", issuer: "IBM / Coursera", year: "2023" },
 ];
 
 export const techStack = [
+  "Java",
+  "Python",
+  "JavaScript",
   "TypeScript",
   "React",
   "Next.js",
   "Node.js",
-  "Go",
-  "Rust",
-  "Python",
-  "GraphQL",
-  "PostgreSQL",
-  "Redis",
-  "ClickHouse",
-  "Kafka",
-  "Docker",
-  "Kubernetes",
-  "Terraform",
-  "AWS",
-  "Vitest",
-  "Playwright",
+  "Express",
+  "Spring Boot",
+  "HTML5",
+  "CSS3",
   "Tailwind CSS",
-  "gRPC",
+  "MySQL",
+  "MongoDB",
+  "Firebase",
+  "Git",
+  "GitHub",
+  "Figma",
+  "Docker",
+  "Vercel",
 ];
 
 export const navItems = [

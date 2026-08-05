@@ -13,24 +13,30 @@ export function Hero() {
                 <span className="absolute inline-flex h-2.5 w-2.5 animate-ping rounded-full bg-brand-blue opacity-75"></span>
                 <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-brand-blue"></span>
               </span>
-              Available for new opportunities
+              Open to internships & collaborations
             </div>
           </Reveal>
-          
+
           <div className="max-w-4xl space-y-6">
             <Reveal delay={200}>
               <h1 className="font-display text-5xl font-bold tracking-tight text-foreground sm:text-7xl lg:text-8xl">
                 Hi, I'm {profile.name}.
                 <br />
-                <span className="text-gradient inline-block animate-shimmer bg-[length:200%_auto]">
-                  {profile.role}.
+                <span className="text-gradient inline-block">
+                  I build for the web.
                 </span>
               </h1>
             </Reveal>
-            
+
             <Reveal delay={300}>
               <p className="max-w-2xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
                 {profile.tagline}
+              </p>
+            </Reveal>
+
+            <Reveal delay={340}>
+              <p className="font-mono text-sm text-muted-foreground/70">
+                📍 {profile.location} &nbsp;·&nbsp; 🎓 B.E. CSE — 2nd Year
               </p>
             </Reveal>
           </div>
@@ -43,7 +49,7 @@ export function Hero() {
                 href="#contact"
                 className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-primary px-8 py-4 font-semibold text-primary-foreground transition-shadow hover:shadow-[0_0_40px_-10px_var(--color-primary)]"
               >
-                <span>Let's talk</span>
+                <span>Get in touch</span>
                 <svg
                   className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
                   fill="none"
@@ -58,9 +64,9 @@ export function Hero() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 href="#projects"
-                className="group relative inline-flex items-center justify-center overflow-hidden rounded-full border border-border bg-card/50 px-8 py-4 font-semibold text-foreground backdrop-blur-sm transition-colors hover:bg-muted/80 hover:text-foreground hover:border-muted-foreground/30"
+                className="group relative inline-flex items-center justify-center overflow-hidden rounded-full border border-border bg-card/50 px-8 py-4 font-semibold text-foreground backdrop-blur-sm transition-colors hover:bg-muted/80 hover:border-muted-foreground/30"
               >
-                View Work
+                See my work
               </motion.a>
             </div>
           </Reveal>

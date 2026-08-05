@@ -10,7 +10,7 @@ export function Certifications() {
         <SectionHeading
           eyebrow="Credentials"
           title="Certifications."
-          description="Formal proof of knowing what I'm doing."
+          description="Online courses and certifications I've completed to deepen my technical skills."
         />
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {certifications.map((cert, i) => (
@@ -36,8 +36,8 @@ export function TechStack() {
     <section id="stack" className="relative px-6 py-20 pb-28 sm:pb-36">
       <div className="mx-auto max-w-6xl text-center">
         <Reveal>
-          <h3 className="font-display text-2xl font-bold text-foreground">Technologies & Tools</h3>
-          <p className="mt-4 text-muted-foreground">The ecosystem I operate in.</p>
+          <h3 className="font-display text-2xl font-bold text-foreground">Technologies & Tools I'm learning</h3>
+          <p className="mt-4 text-muted-foreground">My current tech ecosystem — from courses, projects and hands-on practice.</p>
         </Reveal>
         <div className="mt-10 flex flex-wrap justify-center gap-3">
           {techStack.map((tech, i) => (
