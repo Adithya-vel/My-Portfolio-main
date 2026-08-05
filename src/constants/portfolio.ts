@@ -66,7 +66,7 @@ export const projects = [
       "A modern property and home warranty management platform featuring multi-role authentication, tenant & contractor management, service requests, and an analytics dashboard.",
     tech: ["React", "TypeScript", "Vite", "Tailwind CSS", "TanStack Router"],
     github: "",
-    demo: "",
+    demo: "https://home-sure-management.vercel.app/",
     accent: "from-[color-mix(in_oklab,var(--brand-blue)_60%,transparent)]",
   },
   {
