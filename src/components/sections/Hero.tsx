@@ -36,7 +36,7 @@ export function Hero() {
 
             <Reveal delay={340}>
               <p className="font-mono text-sm text-muted-foreground/70">
-                📍 {profile.location} &nbsp;·&nbsp; 🎓 B.E. CSE — 2nd Year
+                📍 {profile.location} &nbsp;·&nbsp; 🎓 B.Tech CSE — 3rd Year
               </p>
             </Reveal>
           </div>

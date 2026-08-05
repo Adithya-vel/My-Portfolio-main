@@ -15,7 +15,7 @@ export const profile = {
 };
 
 export const stats = [
-  { value: "2nd", label: "Year of B.E. CSE" },
+  { value: "3rd", label: "Year of B.Tech CSE" },
   { value: "10+", label: "Projects built" },
   { value: "3+", label: "Hackathons joined" },
   { value: "100%", label: "Drive to learn" },
@@ -49,10 +49,10 @@ export const experience = [
   },
   {
     period: "2024 — Present",
-    role: "B.E. Computer Science & Engineering",
-    company: "University",
+    role: "B.Tech Computer Science & Engineering",
+    company: "SRM University",
     detail:
-      "Pursuing a Bachelor of Engineering in Computer Science. Studying core subjects including Data Structures, Algorithms, DBMS, Operating Systems, and Computer Networks alongside modern development skills.",
+      "Pursuing a Bachelor of Technology in Computer Science. Studying core subjects including Data Structures, Algorithms, DBMS, Operating Systems, and Computer Networks alongside modern development skills.",
     tags: ["Java", "Python", "C", "Data Structures", "DBMS"],
   },
 ];

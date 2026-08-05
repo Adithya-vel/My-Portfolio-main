@@ -93,7 +93,7 @@ export function About() {
               <div className="mt-8 flex flex-wrap gap-2 border-t border-border/40 pt-6">
                 {[
                   ["📍 Location", "Chengalpattu, Tamil Nadu, India"],
-                  ["🎓 Degree", "B.E. Computer Science & Engineering"],
+                  ["🎓 Degree", "B.Tech Computer Science & Engineering"],
                   ["💼 Open to", "Internships & Collaborations"],
                 ].map(([k, v]) => (
                   <div key={k} className="w-full flex items-center justify-between gap-4 text-sm">
