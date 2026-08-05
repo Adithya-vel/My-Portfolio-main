@@ -17,7 +17,7 @@ export default function Home() {
       <CursorGlow />
       <BackgroundFX />
       <Navbar />
-      <main>
+      <main className="relative z-10">
         <Hero />
         <SectionDivider />
         <About />

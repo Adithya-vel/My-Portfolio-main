@@ -34,7 +34,7 @@ export function CursorGlow() {
 
   return (
     <motion.div
-      className="pointer-events-none fixed top-0 left-0 z-[50] h-[500px] w-[500px] rounded-full bg-brand-blue/20 blur-[120px] mix-blend-screen"
+      className="pointer-events-none fixed top-0 left-0 z-[1] h-[500px] w-[500px] rounded-full bg-brand-blue/30 blur-[100px]"
       animate={{
         x: position.x - 250,
         y: position.y - 250,
