@@ -8,8 +8,8 @@ export const profile = {
   summary:
     "A passionate Computer Science undergraduate with a keen interest in full stack web development, AI/ML, and open-source. Currently in my second year, I'm actively building projects, participating in hackathons, and sharpening my skills every day.",
   socials: [
-    { label: "GitHub", href: "https://github.com", icon: "github" },
-    { label: "LinkedIn", href: "https://linkedin.com", icon: "linkedin" },
+    { label: "GitHub", href: "https://github.com/Adithya-vel", icon: "github" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/adithyavelm", icon: "linkedin" },
     { label: "X", href: "https://x.com", icon: "twitter" },
     { label: "Email", href: "mailto:adithyamuralikrishnan512@gmail.com", icon: "mail" },
   ],
