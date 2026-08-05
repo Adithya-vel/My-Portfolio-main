@@ -52,4 +52,4 @@ src/
 
 ## Author
 
-Adithya
+Adithya Vel M 
