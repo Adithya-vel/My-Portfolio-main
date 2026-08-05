@@ -23,15 +23,9 @@ export function Hero() {
                 Hi, I'm {profile.name}.
                 <br />
                 <span className="text-gradient inline-block">
-                  I build for the web.
+                  I craft digital experiences.
                 </span>
               </h1>
-            </Reveal>
-
-            <Reveal delay={300}>
-              <p className="max-w-2xl text-lg leading-relaxed text-muted-foreground sm:text-xl">
-                {profile.tagline}
-              </p>
             </Reveal>
 
             <Reveal delay={340}>
