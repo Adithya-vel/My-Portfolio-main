@@ -38,12 +38,9 @@ export function Navbar() {
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6">
         <a href="#home" className="transition-transform hover:scale-105 active:scale-95 flex items-center justify-center">
-          <img 
-            src="/logo.portfolio.png" 
-            alt="AV Logo" 
-            className="w-10 h-10 object-contain"
-            style={{ mixBlendMode: 'screen' }}
-          />
+          <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-blue-950 to-indigo-950 text-white font-bold text-xl tracking-widest shadow-md select-none">
+            AV
+          </div>
         </a>
         <nav className="hidden md:block">
           <ul className="flex items-center gap-8">
