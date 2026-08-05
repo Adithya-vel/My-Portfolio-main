@@ -3,6 +3,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionDivider";
 import { GlassCard } from "@/components/ui/GlassCard";
 import { Mail, MapPin } from "lucide-react";
+import { motion } from "framer-motion";
 
 export function Contact() {
   return (
@@ -15,22 +16,24 @@ export function Contact() {
         />
         <div className="mt-14 grid gap-8 md:grid-cols-2">
           <Reveal delay={100}>
-            <GlassCard className="flex h-full flex-col justify-center p-10 text-center sm:p-14">
+            <GlassCard className="flex h-full flex-col justify-center p-10 text-center sm:p-14" tilt>
               <Mail className="mx-auto h-12 w-12 text-brand-blue" />
               <h3 className="mt-6 font-display text-3xl font-bold text-foreground">Email Me</h3>
               <p className="mt-4 text-lg text-muted-foreground">
                 My inbox is always open.
               </p>
-              <a
+              <motion.a
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 href={`mailto:${profile.email}`}
-                className="mt-8 inline-flex items-center justify-center rounded-full bg-brand-blue px-8 py-3 text-sm font-semibold text-white transition-transform hover:scale-105 active:scale-95"
+                className="mt-8 mx-auto inline-flex items-center justify-center rounded-full bg-brand-blue px-8 py-3.5 text-sm font-semibold text-white shadow-[0_0_30px_-5px_var(--color-brand-blue)] transition-shadow hover:shadow-[0_0_40px_-5px_var(--color-brand-blue)]"
               >
                 {profile.email}
-              </a>
+              </motion.a>
             </GlassCard>
           </Reveal>
           <Reveal delay={200}>
-            <GlassCard className="flex h-full flex-col justify-center p-10 text-center sm:p-14">
+            <GlassCard className="flex h-full flex-col justify-center p-10 text-center sm:p-14" tilt>
               <MapPin className="mx-auto h-12 w-12 text-brand-purple" />
               <h3 className="mt-6 font-display text-3xl font-bold text-foreground">Location</h3>
               <p className="mt-4 text-lg text-muted-foreground">
@@ -46,3 +49,4 @@ export function Contact() {
     </section>
   );
 }
+

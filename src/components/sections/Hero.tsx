@@ -1,5 +1,6 @@
 import { profile } from "@/constants/portfolio";
 import { Reveal } from "@/components/ui/Reveal";
+import { motion } from "framer-motion";
 
 export function Hero() {
   return (
@@ -7,10 +8,10 @@ export function Hero() {
       <div className="mx-auto max-w-6xl w-full">
         <div className="flex flex-col items-start gap-8">
           <Reveal delay={100}>
-            <div className="inline-flex items-center rounded-full border border-brand-blue/30 bg-brand-blue/10 px-3 py-1 text-sm font-medium text-brand-blue backdrop-blur-md">
-              <span className="mr-2 flex h-2 w-2">
-                <span className="absolute inline-flex h-2 w-2 animate-ping rounded-full bg-brand-blue opacity-75"></span>
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-brand-blue"></span>
+            <div className="inline-flex items-center rounded-full border border-brand-blue/30 bg-brand-blue/10 px-4 py-1.5 text-sm font-medium text-brand-blue backdrop-blur-md shadow-[0_0_20px_-5px_var(--color-brand-blue)]">
+              <span className="mr-2 flex h-2.5 w-2.5">
+                <span className="absolute inline-flex h-2.5 w-2.5 animate-ping rounded-full bg-brand-blue opacity-75"></span>
+                <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-brand-blue"></span>
               </span>
               Available for new opportunities
             </div>
@@ -36,9 +37,11 @@ export function Hero() {
 
           <Reveal delay={400}>
             <div className="flex flex-wrap items-center gap-4">
-              <a
+              <motion.a
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 href="#contact"
-                className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-primary px-8 py-3.5 font-medium text-primary-foreground transition-all hover:scale-105 hover:bg-primary/90 hover:shadow-[0_0_40px_-10px_var(--color-primary)] active:scale-95"
+                className="group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-primary px-8 py-4 font-semibold text-primary-foreground transition-shadow hover:shadow-[0_0_40px_-10px_var(--color-primary)]"
               >
                 <span>Let's talk</span>
                 <svg
@@ -50,13 +53,15 @@ export function Hero() {
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>
-              </a>
-              <a
+              </motion.a>
+              <motion.a
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 href="#projects"
-                className="group relative inline-flex items-center justify-center overflow-hidden rounded-full border border-border bg-background px-8 py-3.5 font-medium text-foreground transition-all hover:bg-muted hover:text-foreground active:scale-95"
+                className="group relative inline-flex items-center justify-center overflow-hidden rounded-full border border-border bg-card/50 px-8 py-4 font-semibold text-foreground backdrop-blur-sm transition-colors hover:bg-muted/80 hover:text-foreground hover:border-muted-foreground/30"
               >
                 View Work
-              </a>
+              </motion.a>
             </div>
           </Reveal>
         </div>
@@ -64,3 +69,4 @@ export function Hero() {
     </section>
   );
 }
+
