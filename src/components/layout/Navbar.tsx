@@ -41,12 +41,8 @@ export function Navbar() {
           <img 
             src="/logo.portfolio.png" 
             alt="AV Logo" 
-            className="w-10 h-10 object-contain rounded-xl shadow-sm"
-            onError={(e) => {
-              // Fallback if image isn't saved yet
-              e.currentTarget.style.display = 'none';
-              e.currentTarget.parentElement!.innerHTML = '<div class="flex items-center justify-center w-10 h-10 rounded-xl bg-gradient-to-br from-blue-950 to-indigo-950 text-white font-bold text-lg tracking-wider shadow-sm">AV</div>';
-            }}
+            className="w-10 h-10 object-contain"
+            style={{ mixBlendMode: 'screen' }}
           />
         </a>
         <nav className="hidden md:block">
