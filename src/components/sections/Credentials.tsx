@@ -33,7 +33,7 @@ export function Certifications() {
 
 export function TechStack() {
   return (
-    <section id="stack" className="relative px-6 py-20 pb-28 sm:pb-36">
+    <section id="toolbox" className="relative px-6 py-20 pb-28 sm:pb-36">
       <div className="mx-auto max-w-6xl text-center">
         <Reveal>
           <h3 className="font-display text-2xl font-bold text-foreground">Technologies & Tools I'm learning</h3>
