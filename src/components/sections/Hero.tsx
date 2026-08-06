@@ -62,6 +62,36 @@ export function Hero() {
               >
                 See my work
               </motion.a>
+              <motion.a
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                href="https://drive.google.com/uc?export=download&id=1y4mGl2cG8BJ3UP7AphBI_BhTK2W74hYZ"
+                download="Adithya_Vel_Resume.pdf"
+                aria-label="Download Resume PDF"
+                className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full px-8 py-4 font-semibold text-foreground backdrop-blur-sm transition-all duration-300 hover:shadow-[0_0_30px_-8px_rgba(99,102,241,0.6)]"
+                style={{
+                  background: 'rgba(255,255,255,0.04)',
+                  border: '1px solid transparent',
+                  backgroundClip: 'padding-box',
+                  boxShadow: 'inset 0 0 0 1px rgba(99,102,241,0.4)',
+                }}
+              >
+                <span
+                  className="pointer-events-none absolute inset-0 rounded-full opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                  style={{ background: 'linear-gradient(135deg, rgba(99,102,241,0.12), rgba(139,92,246,0.12))' }}
+                />
+                <svg
+                  className="h-4 w-4 transition-transform duration-300 group-hover:translate-y-0.5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  aria-hidden="true"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                </svg>
+                <span className="relative">Download Resume</span>
+              </motion.a>
             </div>
           </Reveal>
         </div>
