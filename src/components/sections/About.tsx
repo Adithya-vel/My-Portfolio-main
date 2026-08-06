@@ -48,7 +48,6 @@ export function About() {
                   About
                 </span>
                 <h2 className="font-display text-5xl font-bold tracking-tight text-foreground sm:text-6xl leading-tight">
-                  About<br />
                   <span className="text-gradient">Me.</span>
                 </h2>
                 <p className="mt-4 text-base text-muted-foreground">
