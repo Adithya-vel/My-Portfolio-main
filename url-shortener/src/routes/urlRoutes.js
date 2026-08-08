@@ -4,10 +4,11 @@ import {
   redirectToOriginalUrl,
   getAllUrls,
 } from "../controllers/urlController.js";
+import { protect } from "../middleware/authMiddleware.js";
 
 const router = express.Router();
 
-router.post("/shorten", createShortUrl);
+router.post("/shorten", protect, createShortUrl);
 router.get("/all", getAllUrls);
 router.get("/:shortCode", redirectToOriginalUrl);
 
