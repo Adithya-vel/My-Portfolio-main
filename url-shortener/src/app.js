@@ -8,5 +8,6 @@ app.use(express.json());
 
 app.use("/api/auth", authRoutes);
 app.use("/api/url", urlRoutes);
+app.use("/", urlRoutes);
 
 export default app;
