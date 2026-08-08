@@ -4,7 +4,7 @@ import { GlassCard } from "@/components/ui/GlassCard";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { useReveal } from "@/hooks/useScroll";
-import profilePhoto from "@/assets/images/profile.jpg";
+
 
 const iconMap = { layout: Layout, server: Server, cloud: Cloud, database: Database, gauge: Gauge, shield: Shield } as const;
 
@@ -20,27 +20,7 @@ export function About() {
           <Reveal delay={60}>
             <div className="flex flex-col items-center lg:items-start gap-8">
 
-              {/* ── Profile Photo ── */}
-              <div className="relative flex-shrink-0">
-                {/* Spinning gradient ring */}
-                <div className="absolute -inset-1 rounded-full bg-gradient-brand opacity-80 blur-sm animate-spin-slow" />
-                {/* Static solid ring */}
-                <div className="absolute -inset-[3px] rounded-full bg-gradient-brand opacity-60" />
 
-                {/* Photo circle */}
-                <div className="relative h-40 w-40 rounded-full overflow-hidden ring-4 ring-background shadow-2xl">
-                  <img
-                    src={profilePhoto}
-                    alt="Adithya Vel M"
-                    className="h-full w-full object-cover object-top"
-                  />
-                </div>
-
-                {/* Online badge */}
-                <span className="absolute bottom-2 right-2 flex h-5 w-5 items-center justify-center rounded-full bg-background ring-2 ring-background">
-                  <span className="h-3 w-3 rounded-full bg-emerald-400 shadow-[0_0_8px_2px_theme(colors.emerald.400/50%)]" />
-                </span>
-              </div>
 
               {/* Heading */}
               <div className="space-y-4 text-center lg:text-left">
