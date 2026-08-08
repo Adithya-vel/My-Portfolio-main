@@ -34,3 +34,27 @@ export const createShortUrl = async (req, res) => {
     });
   }
 };
+
+export const redirectToOriginalUrl = async (req, res) => {
+  try {
+    const { shortCode } = req.params;
+
+    const url = await Url.findOne({ shortCode });
+
+    if (!url) {
+      return res.status(404).json({
+        message: "Short URL not found",
+      });
+    }
+
+    url.clicks += 1;
+    await url.save();
+
+    res.redirect(url.originalUrl);
+  } catch (error) {
+    res.status(500).json({
+      message: "Server error",
+      error: error.message,
+    });
+  }
+};
