@@ -58,3 +58,18 @@ export const redirectToOriginalUrl = async (req, res) => {
     });
   }
 };
+export const getAllUrls = async (req, res) => {
+  try {
+    const urls = await Url.find().sort({ createdAt: -1 });
+
+    res.status(200).json({
+      message: "URLs fetched successfully",
+      data: urls,
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: "Server error",
+      error: error.message,
+    });
+  }
+};
