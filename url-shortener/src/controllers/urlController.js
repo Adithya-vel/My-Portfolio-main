@@ -101,3 +101,49 @@ export const deleteUrl = async (req, res) => {
     });
   }
 };
+export const updateUrl = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { originalUrl } = req.body;
+
+    if (!originalUrl) {
+      return res.status(400).json({
+        message: "Original URL is required",
+      });
+    }
+
+    const url = await Url.findOneAndUpdate(
+      {
+        _id: id,
+        user: req.user.userId,
+      },
+      {
+        originalUrl,
+      },
+      {
+        new: true,
+      }
+    );
+
+    if (!url) {
+      return res.status(404).json({
+        message: "URL not found or you are not authorized to update it",
+      });
+    }
+
+    res.status(200).json({
+      message: "URL updated successfully",
+      data: {
+        id: url._id,
+        originalUrl: url.originalUrl,
+        shortCode: url.shortCode,
+        shortUrl: `http://localhost:5000/${url.shortCode}`,
+      },
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: "Server error",
+      error: error.message,
+    });
+  }
+};
