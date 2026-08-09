@@ -13,10 +13,11 @@ export const createShortUrl = async (req, res) => {
 
     const shortCode = nanoid(6);
 
-    const url = await Url.create({
-      originalUrl,
-      shortCode,
-    });
+  const url = await Url.create({
+  originalUrl,
+  shortCode,
+  user: req.user.userId,
+});
 
     res.status(201).json({
       message: "URL shortened successfully",
@@ -60,11 +61,38 @@ export const redirectToOriginalUrl = async (req, res) => {
 };
 export const getAllUrls = async (req, res) => {
   try {
-    const urls = await Url.find().sort({ createdAt: -1 });
+    const urls = await Url.find({
+  user: req.user.userId,
+}).sort({ createdAt: -1 });
 
     res.status(200).json({
       message: "URLs fetched successfully",
       data: urls,
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: "Server error",
+      error: error.message,
+    });
+  }
+};
+export const deleteUrl = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const url = await Url.findOneAndDelete({
+      _id: id,
+      user: req.user.userId,
+    });
+
+    if (!url) {
+      return res.status(404).json({
+        message: "URL not found or you are not authorized to delete it",
+      });
+    }
+
+    res.status(200).json({
+      message: "URL deleted successfully",
     });
   } catch (error) {
     res.status(500).json({
