@@ -61,7 +61,7 @@ https://github.com/Adithya-vel/My-Portfolio-main
 ### Portfolio Walkthrough
 🎥 **Demo Video:**
 
-https://github.com/user-attachments/assets/c574aa57-63b4-4a5a-b6de-f2711c56aa16(copy paste this link for the demo video) 
+https://github.com/user-attachments/assets/c574aa57-63b4-4a5a-b6de-f2711c56aa16
 
 > The demo video showcases the portfolio navigation, animations, theme switching, project section, and responsive interface.
 
@@ -216,6 +216,6 @@ Computer Science & Engineering Student
 
 🎥 **Demo Video:**
 
- https://github.com/user-attachments/assets/c574aa57-63b4-4a5a-b6de-f2711c56aa16(copy paste this link for the demo video) 
+ https://github.com/user-attachments/assets/c574aa57-63b4-4a5a-b6de-f2711c56aa16
 
 ---
