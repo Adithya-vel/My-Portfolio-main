@@ -93,6 +93,14 @@ export const projects = [
     github: "https://github.com/Adithya-vel/ZT-Iot-Guard",
     demo: "",
   },
+  {
+  title: "URL Shortener",
+  summary:
+    "A full-stack URL shortening service with JWT authentication, MongoDB persistence, click tracking, protected URL management, and production deployment.",
+  tech: ["Node.js", "Express", "MongoDB", "JWT", "Mongoose"],
+  github: "https://github.com/Adithya-vel/My-Portfolio-main",
+  demo: "https://my-portfolio-main-fzb6.onrender.com",
+},
 ];
 
 export const certifications = [
