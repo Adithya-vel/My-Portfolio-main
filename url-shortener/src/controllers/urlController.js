@@ -25,7 +25,7 @@ export const createShortUrl = async (req, res) => {
         id: url._id,
         originalUrl: url.originalUrl,
         shortCode: url.shortCode,
-        shortUrl: `http://localhost:5000/${url.shortCode}`,
+        shortUrl: `https://my-portfolio-main-fzb6.onrender.com/${url.shortCode}`,
       },
     });
   } catch (error) {
@@ -137,7 +137,7 @@ export const updateUrl = async (req, res) => {
         id: url._id,
         originalUrl: url.originalUrl,
         shortCode: url.shortCode,
-        shortUrl: `http://localhost:5000/${url.shortCode}`,
+        shortUrl: `https://my-portfolio-main-fzb6.onrender.com/${url.shortCode}`,
       },
     });
   } catch (error) {
