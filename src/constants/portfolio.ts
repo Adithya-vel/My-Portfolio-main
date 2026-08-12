@@ -18,7 +18,7 @@ export const profile = {
 export const stats = [
   { value: "3rd", label: "Year of B.Tech CSE" },
   { value: "10+", label: "Projects built" },
-  { value: "3+", label: "Hackathons joined" },
+  { value: "6+", label: "Hackathons joined" },
   { value: "100%", label: "Drive to learn" },
 ];
 
