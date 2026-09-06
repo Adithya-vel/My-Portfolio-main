@@ -1,6 +1,8 @@
+export const RESUME_URL =
+  "https://drive.google.com/uc?export=download&id=1y4mGl2cG8BJ3UP7AphBI_BhTK2W74hYZ";
+
 export const profile = {
-  name: "Adithya Vel M",
-  role: "CSE Undergraduate & Aspiring Full Stack Developer",
+  name: "Adithya Vel M",  role: "CSE Undergraduate & Aspiring Full Stack Developer",
   tagline: "Turning ideas into real products — one project at a time.",
   location: "Chengalpattu, Tamil Nadu, India",
   email: "adithyamuralikrishnan512@gmail.com",

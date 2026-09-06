@@ -1,4 +1,4 @@
-import { profile } from "@/constants/portfolio";
+import { profile, RESUME_URL } from "@/constants/portfolio";
 import { Reveal } from "@/components/ui/Reveal";
 import { motion } from "framer-motion";
 
@@ -45,6 +45,7 @@ export function Hero() {
               >
                 <span>Get in touch</span>
                 <svg
+                  aria-hidden="true"
                   className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -65,8 +66,9 @@ export function Hero() {
               <motion.a
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                href="https://drive.google.com/uc?export=download&id=1y4mGl2cG8BJ3UP7AphBI_BhTK2W74hYZ"
-                download="Adithya_Vel_Resume.pdf"
+                href={RESUME_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Download Resume PDF"
                 className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full px-8 py-4 font-semibold text-foreground backdrop-blur-sm transition-all duration-300 hover:shadow-[0_0_30px_-8px_rgba(99,102,241,0.6)]"
                 style={{

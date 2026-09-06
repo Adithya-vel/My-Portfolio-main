@@ -23,13 +23,13 @@ export function Projects() {
                   </h3>
                   <div className="flex items-center gap-4 text-muted-foreground transition-colors group-hover:text-foreground">
                     {project.github && (
-                      <a href={project.github} target="_blank" rel="noreferrer" aria-label="GitHub">
-                        <Github className="h-5 w-5 transition-transform hover:scale-110" />
+                      <a href={project.github} target="_blank" rel="noopener noreferrer" aria-label={`Open ${project.title} on GitHub`}>
+                        <Github aria-hidden="true" className="h-5 w-5 transition-transform hover:scale-110" />
                       </a>
                     )}
                     {project.demo && (
-                      <a href={project.demo} target="_blank" rel="noreferrer" aria-label="Demo">
-                        <ArrowUpRight className="h-5 w-5 transition-transform hover:scale-110" />
+                      <a href={project.demo} target="_blank" rel="noopener noreferrer" aria-label={`Open ${project.title} demo`}>
+                        <ArrowUpRight aria-hidden="true" className="h-5 w-5 transition-transform hover:scale-110" />
                       </a>
                     )}
                   </div>

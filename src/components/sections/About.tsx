@@ -124,7 +124,7 @@ function SkillCard({
       <GlassCard className="group h-full p-7" tilt>
         <div className="flex items-start justify-between gap-4">
           <div className="bg-gradient-brand grid h-11 w-11 place-items-center rounded-2xl transition-transform duration-500 group-hover/card:scale-110 group-hover/card:rotate-6">
-            <Icon className="h-5 w-5 text-primary-foreground" />
+            <Icon aria-hidden="true" className="h-5 w-5 text-primary-foreground" />
           </div>
           <span className="font-mono text-xs text-muted-foreground">{skill.level}%</span>
         </div>

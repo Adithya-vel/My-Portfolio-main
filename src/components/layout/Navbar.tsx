@@ -1,9 +1,7 @@
 import { useState, useEffect } from "react";
-import { navItems } from "@/constants/portfolio";
+import { navItems, RESUME_URL } from "@/constants/portfolio";
 import { cn } from "@/utils/cn";
 import { ThemePicker } from "@/components/ui/ThemePicker";
-
-const RESUME_URL = "https://drive.google.com/uc?export=download&id=1y4mGl2cG8BJ3UP7AphBI_BhTK2W74hYZ";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -31,6 +29,15 @@ export function Navbar() {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setMobileOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [mobileOpen]);
 
   return (
     <header
@@ -71,9 +78,11 @@ export function Navbar() {
         <div className="hidden md:flex items-center gap-3">
           <ThemePicker />
           {/* Resume Download */}
+          {/* Note: `download` is ignored cross-origin; file opens in a new tab. */}
           <a
             href={RESUME_URL}
-            download="Adithya_Vel_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             aria-label="Download Resume"
             className="group inline-flex items-center gap-1.5 rounded-full border border-indigo-500/40 bg-indigo-500/10 px-4 py-2 text-sm font-semibold text-indigo-300 backdrop-blur-sm transition-all duration-300 hover:bg-indigo-500/20 hover:border-indigo-400/60 hover:shadow-[0_0_20px_-6px_rgba(99,102,241,0.7)] hover:-translate-y-px focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"
           >
@@ -101,6 +110,8 @@ export function Navbar() {
         <button
           className="flex md:hidden items-center justify-center w-10 h-10 rounded-lg text-muted-foreground hover:text-foreground transition-colors"
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
+          aria-expanded={mobileOpen}
+          aria-controls="mobile-menu"
           onClick={() => setMobileOpen((v) => !v)}
         >
           {mobileOpen ? (
@@ -117,7 +128,7 @@ export function Navbar() {
 
       {/* Mobile Menu */}
       {mobileOpen && (
-        <div className="md:hidden border-t border-border/50 bg-background/95 backdrop-blur-md px-6 py-6 flex flex-col gap-4">
+        <div id="mobile-menu" className="md:hidden border-t border-border/50 bg-background/95 backdrop-blur-md px-6 py-6 flex flex-col gap-4">
           <nav aria-label="Mobile navigation">
             <ul className="flex flex-col gap-4">
               {navItems.map((item) => (
@@ -139,7 +150,8 @@ export function Navbar() {
           <div className="flex flex-col gap-3 pt-2 border-t border-border/30">
             <a
               href={RESUME_URL}
-              download="Adithya_Vel_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               aria-label="Download Resume"
               onClick={() => setMobileOpen(false)}
               className="group inline-flex items-center justify-center gap-2 rounded-full border border-indigo-500/40 bg-indigo-500/10 px-5 py-2.5 text-sm font-semibold text-indigo-300 transition-all duration-300 hover:bg-indigo-500/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo-500"

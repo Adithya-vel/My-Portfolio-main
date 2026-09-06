@@ -3,29 +3,48 @@ import { useState, useEffect, useCallback } from 'react';
 export type Theme = 'default' | 'aurora' | 'ember' | 'daylight' | 'sunrise' | 'frost';
 
 const STORAGE_KEY = 'portfolio-theme';
+const THEMES: Theme[] = ['default', 'aurora', 'ember', 'daylight', 'sunrise', 'frost'];
+
+function isTheme(value: unknown): value is Theme {
+  return typeof value === 'string' && (THEMES as string[]).includes(value);
+}
+
+function readStoredTheme(): Theme {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (isTheme(raw)) return raw;
+  } catch {
+    // private mode / quota / SSR — fall through to default
+  }
+  return 'default';
+}
+
+function applyTheme(theme: Theme) {
+  const root = document.documentElement;
+  if (theme === 'default') {
+    root.removeAttribute('data-theme');
+  } else {
+    root.setAttribute('data-theme', theme);
+  }
+  try {
+    localStorage.setItem(STORAGE_KEY, theme);
+  } catch {
+    // storage unavailable — theme still applies for this session
+  }
+}
 
 export function useTheme() {
   const [theme, setTheme] = useState<Theme>(() => {
     if (typeof window === 'undefined') return 'default';
-    return (localStorage.getItem(STORAGE_KEY) as Theme) ?? 'default';
+    return readStoredTheme();
   });
 
   useEffect(() => {
-    const root = document.documentElement;
-    if (theme === 'default') {
-      root.removeAttribute('data-theme');
-    } else {
-      root.setAttribute('data-theme', theme);
-    }
-    localStorage.setItem(STORAGE_KEY, theme);
+    applyTheme(theme);
   }, [theme]);
 
   const cycleTheme = useCallback(() => {
-    const themes: Theme[] = ['default', 'aurora', 'ember', 'daylight', 'sunrise', 'frost'];
-    setTheme(prev => {
-      const idx = themes.indexOf(prev);
-      return themes[(idx + 1) % themes.length];
-    });
+    setTheme((prev) => THEMES[(THEMES.indexOf(prev) + 1) % THEMES.length]);
   }, []);
 
   return { theme, setTheme, cycleTheme };

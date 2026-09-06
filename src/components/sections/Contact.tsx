@@ -9,17 +9,51 @@ import { useState } from "react";
 export function Contact() {
   const [emailCopied, setEmailCopied] = useState(false);
   const [phoneCopied, setPhoneCopied] = useState(false);
+  const [copyError, setCopyError] = useState<string | null>(null);
 
-  function handleCopyEmail() {
-    navigator.clipboard.writeText(profile.email);
-    setEmailCopied(true);
-    setTimeout(() => setEmailCopied(false), 2000);
+  async function copyText(text: string) {
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(text);
+        return true;
+      }
+      // Fallback for insecure contexts / unsupported browsers
+      const ta = document.createElement("textarea");
+      ta.value = text;
+      ta.setAttribute("readonly", "");
+      ta.style.position = "fixed";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      const ok = document.execCommand("copy");
+      document.body.removeChild(ta);
+      if (!ok) throw new Error("copy failed");
+      return true;
+    } catch {
+      return false;
+    }
   }
 
-  function handleCopyPhone() {
-    navigator.clipboard.writeText(profile.phone);
-    setPhoneCopied(true);
-    setTimeout(() => setPhoneCopied(false), 2000);
+  async function handleCopyEmail() {
+    const ok = await copyText(profile.email);
+    if (ok) {
+      setEmailCopied(true);
+      setCopyError(null);
+      setTimeout(() => setEmailCopied(false), 2000);
+    } else {
+      setCopyError("Copy failed — long-press to select the email manually.");
+    }
+  }
+
+  async function handleCopyPhone() {
+    const ok = await copyText(profile.phone);
+    if (ok) {
+      setPhoneCopied(true);
+      setCopyError(null);
+      setTimeout(() => setPhoneCopied(false), 2000);
+    } else {
+      setCopyError("Copy failed — long-press to select the number manually.");
+    }
   }
 
   return (
@@ -37,7 +71,7 @@ export function Contact() {
           {/* Email Card */}
           <Reveal delay={100}>
             <GlassCard className="flex h-full flex-col justify-center p-10 text-center sm:p-14" tilt>
-              <Mail className="mx-auto h-10 w-10 text-brand-blue" />
+              <Mail aria-hidden="true" className="mx-auto h-10 w-10 text-brand-blue" />
               <h3 className="mt-6 font-display text-2xl font-bold text-foreground">Email Me</h3>
               <p className="mt-3 text-sm text-muted-foreground">My inbox is always open.</p>
               <div className="mt-6 mx-auto flex items-center gap-2 rounded-full border border-border bg-muted/50 px-5 py-3 backdrop-blur-sm">
@@ -49,10 +83,10 @@ export function Contact() {
                   aria-label="Copy email"
                   className="ml-1 flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-brand-blue/15 text-brand-blue transition-colors hover:bg-brand-blue/25"
                 >
-                  {emailCopied ? <Check className="h-3.5 w-3.5" /> : <Copy className="h-3.5 w-3.5" />}
+                  {emailCopied ? <Check aria-hidden="true" className="h-3.5 w-3.5" /> : <Copy aria-hidden="true" className="h-3.5 w-3.5" />}
                 </motion.button>
               </div>
-              {emailCopied && <p className="mt-3 font-mono text-xs text-emerald-400">Copied!</p>}
+              {emailCopied && <p role="status" className="mt-3 font-mono text-xs text-emerald-400">Copied!</p>}
             </GlassCard>
           </Reveal>
 
@@ -67,24 +101,24 @@ export function Contact() {
                 <motion.a
                   href="https://github.com/Adithya-vel"
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   aria-label="GitHub"
                   whileHover={{ scale: 1.15, y: -4 }}
                   whileTap={{ scale: 0.92 }}
                   className="flex h-16 w-16 items-center justify-center rounded-full border border-border bg-card/60 text-muted-foreground backdrop-blur-sm transition-all duration-300 hover:text-foreground hover:bg-foreground/10"
                 >
-                  <Github className="h-6 w-6" />
+                  <Github aria-hidden="true" className="h-6 w-6" />
                 </motion.a>
                 <motion.a
                   href="https://www.linkedin.com/in/adithyavelm"
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                   aria-label="LinkedIn"
                   whileHover={{ scale: 1.15, y: -4 }}
                   whileTap={{ scale: 0.92 }}
                   className="flex h-16 w-16 items-center justify-center rounded-full border border-border bg-card/60 text-muted-foreground backdrop-blur-sm transition-all duration-300 hover:text-[#0A66C2] hover:bg-[#0A66C2]/10"
                 >
-                  <Linkedin className="h-6 w-6" />
+                  <Linkedin aria-hidden="true" className="h-6 w-6" />
                 </motion.a>
               </div>
               <p className="mt-10 font-mono text-xs text-muted-foreground/60">
@@ -99,7 +133,7 @@ export function Contact() {
         <div className="mt-8 mx-auto max-w-md">
           <Reveal delay={300}>
             <GlassCard className="flex flex-col justify-center p-10 text-center sm:p-14" tilt>
-              <Phone className="mx-auto h-10 w-10 text-emerald-400" />
+              <Phone aria-hidden="true" className="mx-auto h-10 w-10 text-emerald-400" />
               <h3 className="mt-6 font-display text-2xl font-bold text-foreground">Phone</h3>
               <p className="mt-3 text-sm text-muted-foreground">Feel free to call or WhatsApp.</p>
               <div className="mt-6 mx-auto flex items-center gap-2 rounded-full border border-border bg-muted/50 px-5 py-3 backdrop-blur-sm">
@@ -111,13 +145,18 @@ export function Contact() {
                   aria-label="Copy phone"
                   className="ml-1 flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-emerald-400/15 text-emerald-400 transition-colors hover:bg-emerald-400/25"
                 >
-                  {phoneCopied ? <Check className="h-3.5 w-3.5" /> : <Copy className="h-3.5 w-3.5" />}
+                  {phoneCopied ? <Check aria-hidden="true" className="h-3.5 w-3.5" /> : <Copy aria-hidden="true" className="h-3.5 w-3.5" />}
                 </motion.button>
               </div>
-              {phoneCopied && <p className="mt-3 font-mono text-xs text-emerald-400">Copied!</p>}
+              {phoneCopied && <p role="status" className="mt-3 font-mono text-xs text-emerald-400">Copied!</p>}
             </GlassCard>
           </Reveal>
         </div>
+        {copyError && (
+          <p role="alert" className="mx-auto mt-6 max-w-md text-center font-mono text-xs text-red-400">
+            {copyError}
+          </p>
+        )}
 
       </div>
     </section>

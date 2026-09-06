@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { motion, useScroll, useSpring } from "framer-motion";
+import { motion, useScroll, useSpring, useMotionValue } from "framer-motion";
 
 export function BackgroundFX() {
   return (
@@ -11,39 +11,51 @@ export function BackgroundFX() {
 }
 
 export function CursorGlow() {
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [visible, setVisible] = useState(false);
+  const x = useMotionValue(-600);
+  const y = useMotionValue(-600);
+  const springX = useSpring(x, { stiffness: 250, damping: 30, mass: 0.6 });
+  const springY = useSpring(y, { stiffness: 250, damping: 30, mass: 0.6 });
 
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setPosition({ x: e.clientX, y: e.clientY });
-      setVisible(true);
+    // Skip entirely on touch / coarse pointers and reduced-motion
+    if (
+      window.matchMedia("(pointer: coarse)").matches ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      return;
+    }
+    let raf = 0;
+    let pending: { x: number; y: number } | null = null;
+    const flush = () => {
+      raf = 0;
+      if (pending) {
+        x.set(pending.x - 250);
+        y.set(pending.y - 250);
+        pending = null;
+      }
     };
-    const handleMouseLeave = () => setVisible(false);
-
-    window.addEventListener("mousemove", handleMouseMove);
-    document.addEventListener("mouseleave", handleMouseLeave);
-
+    const handleMouseMove = (e: MouseEvent) => {
+      pending = { x: e.clientX, y: e.clientY };
+      if (!raf) raf = requestAnimationFrame(flush);
+    };
+    window.addEventListener("mousemove", handleMouseMove, { passive: true });
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
-      document.removeEventListener("mouseleave", handleMouseLeave);
+      cancelAnimationFrame(raf);
     };
-  }, []);
+  }, [x, y]);
 
-  if (!visible) return null;
+  // Render nothing on touch devices (SSR-safe: matchMedia checked in effect,
+  // element stays hidden until first mousemove via opacity)
+  if (typeof window !== "undefined" && window.matchMedia?.("(pointer: coarse)").matches) {
+    return null;
+  }
 
   return (
     <motion.div
-      className="pointer-events-none fixed top-0 left-0 z-[1] h-[500px] w-[500px] rounded-full bg-brand-blue/30 blur-[100px]"
-      animate={{
-        x: position.x - 250,
-        y: position.y - 250,
-      }}
-      transition={{
-        type: "tween",
-        ease: "linear",
-        duration: 0.1,
-      }}
+      aria-hidden="true"
+      className="pointer-events-none fixed top-0 left-0 z-[1] hidden h-[500px] w-[500px] rounded-full bg-brand-blue/30 blur-[100px] md:block"
+      style={{ x: springX, y: springY }}
     />
   );
 }
